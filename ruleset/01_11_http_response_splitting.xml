@@ -1,9 +1,9 @@
-<rule name="XSS"
+<rule name="HTTP_RESPONSE_SPLITTING"
       language="java"
-      message="XSS의 위험이 있습니다."
+      message="HTTP_RESPONSE_SPLITTING의 위험이 있습니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">
     <description>
-        XSS의 위험이 있습니다.
+        HTTP_RESPONSE_SPLITTING의 위험이 있습니다.
     </description>
     <priority>1</priority>
     <properties>
