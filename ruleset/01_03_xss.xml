@@ -11,9 +11,25 @@
             <value>
 <![CDATA[
 //PrimaryExpression[
-  (PrimarySuffix[contains(@Image, "print")]
+  (PrimarySuffix[contains(@Image, "print")
+    and
+    following-sibling::PrimarySuffix//Name
+  ]
+  or (
+    PrimaryPrefix//Name[contains(@Image, "print")]
+    and
+    PrimarySuffix//Name
+  )
   or
-  PrimarySuffix[contains(@Image, "write")]
+  PrimarySuffix[contains(@Image, "write")
+    and
+    following-sibling::PrimarySuffix//Name
+  ]
+  or (
+    PrimaryPrefix//Name[contains(@Image, "write")]
+    and
+    PrimarySuffix//Name
+  )
   )
   and
   (count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "readLine"))])>0
