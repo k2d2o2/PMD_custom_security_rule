@@ -13,6 +13,8 @@
 //AllocationExpression/ClassOrInterfaceType[
   contains(@Image, "File")
   and
+  (not (contains(@Image, "File_")))
+  and
   //Name/@Image
   and 
   (count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "readLine"))])>0
