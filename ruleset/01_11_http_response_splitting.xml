@@ -1,0 +1,57 @@
+<rule name="XSS"
+      language="java"
+      message="XSS의 위험이 있습니다."
+      class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <description>
+        XSS의 위험이 있습니다.
+    </description>
+    <priority>1</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+//PrimaryExpression[
+  (PrimarySuffix[contains(@Image, "addCookie")
+    and
+    following-sibling::PrimarySuffix//Name
+  ]
+  or (
+    PrimaryPrefix//Name[contains(@Image, "addCookie")]
+    and
+    PrimarySuffix//Name
+  )
+  or
+  PrimarySuffix[contains(@Image, "addHeader")
+    and
+    following-sibling::PrimarySuffix//Name
+  ]
+  or (
+    PrimaryPrefix//Name[contains(@Image, "addHeader")]
+    and
+    PrimarySuffix//Name
+  )
+  or
+  PrimarySuffix[contains(@Image, "setHeader")
+    and
+    following-sibling::PrimarySuffix//Name
+  ]
+  or (
+    PrimaryPrefix//Name[contains(@Image, "setHeader")]
+    and
+    PrimarySuffix//Name
+  )
+  )
+  and
+  (count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "readLine"))])>0
+  or
+  count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "getParameter"))])>0
+  )
+]
+
+
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>
