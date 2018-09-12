@@ -1,0 +1,31 @@
+    <rule name="SQL_INJECTION"
+      language="java"
+      message="SQL_INJECTION의 위험이 있습니다."
+      class="net.sourceforge.pmd.lang.rule.XPathRule">
+      <!-- externalInfoUrl="TODO"-->
+    <description>
+        SQL_INJECTION의 위험이 있습니다.
+    </description>
+    <priority>1</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+
+//PrimaryExpression[
+  PrimaryPrefix/Name[contains(@Image, 'execute')]
+  and
+  PrimarySuffix//Name
+  and
+  (count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "readLine"))])>0
+  or
+  count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "getParameter"))])>0
+)
+]
+
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>
