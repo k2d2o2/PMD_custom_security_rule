@@ -1,0 +1,30 @@
+<rule name="OPEN_REDIRECT"
+      language="java"
+      message="OPEN_REDIRECT의 위험이 있습니다."
+      class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <description>
+        OPEN_REDIRECT의 위험이 있습니다.
+    </description>
+    <priority>1</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+//PrimaryExpression[
+  (PrimaryPrefix//Name[contains(@Image, "sendRedirect")])
+  and
+  PrimarySuffix//Name
+  and
+  (count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "readLine"))])>0
+  or
+  count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "getParameter"))])>0
+  )
+]
+
+
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>
