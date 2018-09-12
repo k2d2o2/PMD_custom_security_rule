@@ -1,0 +1,41 @@
+<rule name="FORMAT_STRING"
+      language="java"
+      message="FORMAT_STRING의 위험이 있습니다."
+      class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <description>
+        FORMAT_STRING의 위험이 있습니다.
+    </description>
+    <priority>1</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+//PrimaryExpression[
+  (PrimarySuffix[contains(@Image, "format")
+    and
+    following-sibling::PrimarySuffix//Name
+    and
+    not(following-sibling::PrimarySuffix//Literal["%s"])
+  ]
+  or (
+    PrimaryPrefix//Name[contains(@Image, "format")]
+    and
+    PrimarySuffix//Name
+    and
+    not(PrimarySuffix//Literal["%s"])
+  )
+  )
+  and
+  (count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "readLine"))])>0
+  or
+  count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "getParameter"))])>0
+  )
+]
+
+
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>
