@@ -1,0 +1,37 @@
+<rule name="XPATH_INJECTION"
+      language="java"
+      message="XPATH_INJECTION의 위험이 있습니다."
+      class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <description>
+        XPATH_INJECTION의 위험이 있습니다.
+    </description>
+    <priority>1</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+//PrimaryExpression[
+  (PrimarySuffix[contains(@Image, "evaluate")
+    and
+    following-sibling::PrimarySuffix//Name
+  ]
+  or (
+    PrimaryPrefix//Name[contains(@Image, "evaluate")]
+    and
+    PrimarySuffix//Name
+  )
+  )
+  and
+  (count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "readLine"))])>0
+  or
+  count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "getParameter"))])>0
+  )
+]
+
+
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>
