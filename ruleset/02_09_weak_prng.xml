@@ -1,0 +1,36 @@
+<rule name="WEAK_PRNG"
+      language="java"
+      message="WEAK_PRNG는 위험합니다."
+      class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <description>
+        WEAK_PRNG는 위험합니다.
+    </description>
+    <priority>1</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+
+//PrimaryExpression[
+  (
+    PrimarySuffix[contains(@Image, "Math.random")]
+    or (
+      PrimaryPrefix[
+        (Name[contains(@Image, "Math.random")])
+        or
+        (AllocationExpression/ClassOrInterfaceType[
+          @Image ="Random"
+          and
+          (count(ancestor::BlockStatement/following-sibling::BlockStatement//Name[(contains(@Image, "nextInt"))])>0)
+        ])
+      ]
+    )
+  )
+]
+
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>
