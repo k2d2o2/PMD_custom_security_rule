@@ -1,0 +1,44 @@
+<rule name="CLEAR_TEXT_TRANSMISSION_OF_SENSITIVE_INFORMATION"
+      language="java"
+      message="CLEAR_TEXT_TRANSMISSION_OF_SENSITIVE_INFORMATION은 위험합니다."
+      class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <description>
+        CLEAR_TEXT_TRANSMISSION_OF_SENSITIVE_INFORMATION은 위험합니다.
+    </description>
+    <priority>1</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+//PrimaryExpression[
+  (PrimarySuffix[contains(@Image, "print")
+    and
+    following-sibling::PrimarySuffix//Name
+  ]
+  or (
+    PrimaryPrefix//Name[contains(@Image, "print")]
+    and
+    PrimarySuffix//Name
+  )
+  )
+  and
+  (
+    count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "Password"))])>0
+    or
+    count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "password"))])>0
+  )
+  and
+  (
+    not(
+      count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "ssl"))])>0
+    )
+  )
+]
+
+
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>

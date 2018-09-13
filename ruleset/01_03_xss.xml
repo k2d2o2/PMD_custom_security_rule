@@ -21,12 +21,12 @@
     PrimarySuffix//Name
   )
   or
-  PrimarySuffix[contains(@Image, "write")
+  PrimarySuffix[ends-with(@Image, "write")
     and
     following-sibling::PrimarySuffix//Name
   ]
   or (
-    PrimaryPrefix//Name[contains(@Image, "write")]
+    PrimaryPrefix//Name[ends-with(@Image, "write")]
     and
     PrimarySuffix//Name
   )
