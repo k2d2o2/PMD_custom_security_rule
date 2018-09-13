@@ -1,0 +1,33 @@
+<rule name="HARD_CODED_CRYPTOGRAPHIC_KEY"
+      language="java"
+      message="HARD_CODED_CRYPTOGRAPHIC_KEY는 위험합니다."
+      class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <description>
+        HARD_CODED_CRYPTOGRAPHIC_KEY는 위험합니다.
+    </description>
+    <priority>1</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+
+//AllocationExpression/ClassOrInterfaceType[
+  @Image ="SecretKeySpec"
+  and
+  (count(ancestor::BlockStatement/preceding-sibling::BlockStatement//StatementExpression[
+    PrimaryExpression[
+      (PrimaryPrefix/Name/@Image)
+      and
+      //AssignmentOperator
+    ]
+    and
+    Expression//Literal[contains(@Image, '"')]
+  ]) > 0)
+]
+
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>
