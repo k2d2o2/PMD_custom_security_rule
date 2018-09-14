@@ -1,0 +1,32 @@
+<rule name="PERSISTENT_COOKIE"
+      language="java"
+      message="PERSISTENT_COOKIE는 위험합니다."
+      class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <description>
+        PERSISTENT_COOKIE는 위험합니다.
+    </description>
+    <priority>1</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+
+//PrimaryExpression[
+  (PrimarySuffix[contains(@Image, "setMaxAge")
+    and
+    PrimarySuffix//MultiplicativeExpression
+  ]
+  or (
+    PrimaryPrefix//Name[contains(@Image, "setMaxAge")]
+    and
+    PrimarySuffix//MultiplicativeExpression
+  )
+  )
+]
+
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>
