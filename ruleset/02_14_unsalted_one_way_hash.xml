@@ -1,0 +1,37 @@
+<rule name="UNSALTED_ONE_WAY_HASH"
+      language="java"
+      message="UNSALTED_ONE_WAY_HASH는 위험합니다."
+      class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <description>
+        UNSALTED_ONE_WAY_HASH는 위험합니다.
+    </description>
+    <priority>1</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+
+//PrimaryExpression[
+  (PrimarySuffix[contains(@Image, "MessageDigest.getInstance")
+    and
+    following-sibling::PrimarySuffix//Literal
+  ]
+  or (
+    PrimaryPrefix//Name[contains(@Image, "MessageDigest.getInstance")]
+    and
+    PrimarySuffix//Literal
+  )
+  )
+  and
+  (count(ancestor::BlockStatement/following-sibling::BlockStatement//Name[(contains(@Image, "digest"))])>0)
+  and
+  (not(count(ancestor::BlockStatement/following-sibling::BlockStatement//Name[(contains(@Image, ".update"))])>0))
+
+]
+
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>
