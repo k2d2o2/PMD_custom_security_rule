@@ -1,0 +1,24 @@
+<rule name="MISUSE_API"
+      language="java"
+      message="vulnerable API such as banned function or possibly misused API causes security breach"
+      class="net.sourceforge.pmd.lang.rule.XPathRule"
+      <!-- externalInfoUrl="TODO"--> >
+    <description>
+vulnerable API such as banned function or possibly misused API causes security breach
+    </description>
+    <priority>3</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+//BlockStatement/Statement/StatementExpression/PrimaryExpression[
+	PrimaryPrefix/Name[contains(@Image, "System.exit")]
+	and
+	PrimarySuffix/Arguments/ArgumentList/Expression/PrimaryExpression/PrimaryPrefix/Literal[number(@Image) eq 1]
+]
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>
