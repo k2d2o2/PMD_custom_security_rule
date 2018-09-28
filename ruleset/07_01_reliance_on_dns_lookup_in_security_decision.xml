@@ -1,0 +1,24 @@
+<rule name="RELIANCE_ON_DNS_LOOKUP_IN_SECURITY_DECISION"
+      language="java"
+      message="Reliance on DNS Lookup for security decision is dangerous."
+      class="net.sourceforge.pmd.lang.rule.XPathRule"
+      <!-- externalInfoUrl="TODO"--> >
+    <description>
+Since attacker could manupulate DNS entry, security decision depends on domain name is dangerous.
+    </description>
+    <priority>3</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+//Expression/PrimaryExpression[
+	PrimaryPrefix/Name[contains(@Image, "getCanonicalHostName")]
+	and
+	PrimarySuffix/Arguments/ArgumentList/Expression/PrimaryExpression/PrimaryPrefix/Literal[not(matches(@Image, "[0-9]+[.][0-9]+[.][0-9]+[.][0-9]+"))]
+]
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>
