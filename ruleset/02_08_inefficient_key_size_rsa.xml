@@ -1,0 +1,32 @@
+<rule name="INEFFICIENT_KEY_SIZE(RSA)"
+      language="java"
+      message="Detect if the size of the key used for encryption is short."
+      class="net.sourceforge.pmd.lang.rule.XPathRule"
+      <!-- externalInfoUrl="TODO"--> >
+    <description>
+Detect if the size of the key used for encryption is short. If the length of the key is short, it makes the encryption algorithm weak. It is recommended to use a key of which length is at least 1024 bits for a RSA algorithm.
+    </description>
+    <priority>3</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+//BlockStatement[
+	Statement/StatementExpression/PrimaryExpression[
+		(
+			PrimaryPrefix/Name[ends-with(@Image, "initialize")]
+			and
+			PrimarySuffix/Arguments/ArgumentList/Expression/PrimaryExpression/PrimaryPrefix/Literal[number(@Image) lt 1024]
+		)
+	]
+	and
+	ancestor::Block/BlockStatement[
+		LocalVariableDeclaration[Type/ReferenceType/ClassOrInterfaceType[contains(@Image, "KeyPairGenerator")]]
+	]
+]
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>
