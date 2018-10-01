@@ -2,7 +2,7 @@
       language="java"
       message="vulnerable API such as banned function or possibly misused API causes security breach"
       class="net.sourceforge.pmd.lang.rule.XPathRule"
-      <!-- externalInfoUrl="TODO"--> >
+      >
     <description>
 vulnerable API such as banned function or possibly misused API causes security breach
     </description>

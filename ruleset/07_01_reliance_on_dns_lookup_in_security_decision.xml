@@ -2,7 +2,7 @@
       language="java"
       message="Reliance on DNS Lookup for security decision is dangerous."
       class="net.sourceforge.pmd.lang.rule.XPathRule"
-      <!-- externalInfoUrl="TODO"--> >
+       >
     <description>
 Since attacker could manupulate DNS entry, security decision depends on domain name is dangerous.
     </description>

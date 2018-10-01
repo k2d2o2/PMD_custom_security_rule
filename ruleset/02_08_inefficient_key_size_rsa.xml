@@ -2,7 +2,7 @@
       language="java"
       message="Detect if the size of the key used for encryption is short."
       class="net.sourceforge.pmd.lang.rule.XPathRule"
-      <!-- externalInfoUrl="TODO"--> >
+      >
     <description>
 Detect if the size of the key used for encryption is short. If the length of the key is short, it makes the encryption algorithm weak. It is recommended to use a key of which length is at least 1024 bits for a RSA algorithm.
     </description>
