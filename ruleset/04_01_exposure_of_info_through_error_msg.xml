@@ -1,0 +1,46 @@
+<rule name="EXPOSURE_OF_INFO_THROUGH_ERROR"
+      language="java"
+      message="EXPOSURE_OF_INFO_THROUGH_ERROR는 위험합니다."
+      class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <description>
+        EXPOSURE_OF_INFO_THROUGH_ERROR는 위험합니다.
+    </description>
+    <priority>1</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+
+//PrimaryExpression[
+  (PrimarySuffix[contains(@Image, "print")
+    and
+    following-sibling::PrimarySuffix//Name
+  ]
+  or (
+    PrimaryPrefix//Name[contains(@Image, "print")]
+    and
+    PrimarySuffix//Name
+  )
+  or
+  PrimarySuffix[ends-with(@Image, "write")
+    and
+    following-sibling::PrimarySuffix//Name
+  ]
+  or (
+    PrimaryPrefix//Name[ends-with(@Image, "write")]
+    and
+    PrimarySuffix//Name
+  )
+  )
+  and
+  (
+  count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "getSession"))])>0
+  )
+]
+
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>
