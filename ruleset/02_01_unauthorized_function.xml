@@ -1,0 +1,50 @@
+<rule name="UNAUTHORIZED_FUNCTION"
+      language="java"
+      message="UNAUTHORIZED_FUNCTION은 위험합니다."
+      class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <description>
+        UNAUTHORIZED_FUNCTION은 위험합니다.
+    </description>
+    <priority>1</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+
+//PrimaryExpression[
+  (PrimarySuffix[contains(@Image, "print")
+    and
+    following-sibling::PrimarySuffix//Name
+  ]
+  or (
+    PrimaryPrefix//Name[contains(@Image, "print")]
+    and
+    PrimarySuffix//Name
+  )
+  or
+  PrimarySuffix[contains(@Image, "write")
+    and
+    following-sibling::PrimarySuffix//Name
+  ]
+  or (
+    PrimaryPrefix//Name[contains(@Image, "write")]
+    and
+    PrimarySuffix//Name
+  )
+  )
+  and
+  (
+  count(ancestor::BlockStatement/preceding-sibling::BlockStatement//PrimaryExpression[
+   PrimaryPrefix/Name[(contains(@Image, "getParameter"))]
+   and
+   PrimarySuffix//Literal[contains(@Image, "id")]
+  ])>0
+  )
+]
+
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>
