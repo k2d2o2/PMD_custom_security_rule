@@ -1,0 +1,25 @@
+<rule name="ERROR_WITHOUT_ACTION"
+      language="java"
+      message="ERROR_WITHOUT_ACTION는 위험합니다."
+      class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <description>
+        ERROR_WITHOUT_ACTION는 위험합니다.
+    </description>
+    <priority>1</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+
+//IfStatement[
+  Expression//Name[contains(@Image, "mkdirs")]
+  and
+  not(Statement//Block/*)
+]
+
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>
