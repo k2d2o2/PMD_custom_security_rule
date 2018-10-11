@@ -1,0 +1,21 @@
+<rule name="UNCLEANED_DEBUG_CODE"
+      language="java"
+      message="UNCLEANED_DEBUG_CODE는 위험합니다."
+      class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <description>
+        UNCLEANED_DEBUG_CODE는 위험합니다.
+    </description>
+    <priority>1</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+
+//MethodDeclarator[@Image="main"]
+
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>
