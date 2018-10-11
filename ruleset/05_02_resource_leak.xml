@@ -1,0 +1,31 @@
+<rule name="RESOURCE_LEAK"
+      language="java"
+      message="RESOURCE_LEAK의 위험이 있습니다."
+      class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <description>
+        RESOURCE_LEAK의 위험이 있습니다.
+    </description>
+    <priority>1</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+
+//MethodDeclaration//Name[
+  (
+    ends-with(@Image, "Stream")
+    or ends-with(@Image, "Reader")
+    or ends-with(@Image, "Writer")
+  )
+  and
+  (
+    not(ancestor::MethodDeclaration//FinallyStatement//Name[contains(@Image,"close")])
+  )
+]
+
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>
