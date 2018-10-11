@@ -1,0 +1,20 @@
+<rule name="TOCTOU"
+      language="java"
+      message="TOCTOU의 위험이 있습니다."
+      class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <description>
+        TOCTOU의 위험이 있습니다.
+    </description>
+    <priority>1</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+
+
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>

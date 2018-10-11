@@ -1,0 +1,20 @@
+<rule name="PUBLIC_DATA_ASSIGNED_TO_PRIVATE_ARRAY"
+      language="java"
+      message="PUBLIC_DATA_ASSIGNED_TO_PRIVATE_ARRAY는 위험합니다"
+      class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <description>
+        PUBLIC_DATA_ASSIGNED_TO_PRIVATE_ARRAY는 위험합니다
+    </description>
+    <priority>1</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+
+
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>

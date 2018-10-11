@@ -1,0 +1,20 @@
+<rule name="IMPROPER_CHECK_FOR_EXCEPTIONAL_CONDITION"
+      language="java"
+      message="IMPROPER_CHECK_FOR_EXCEPTIONAL_CONDITION는 위험합니다"
+      class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <description>
+        IMPROPER_CHECK_FOR_EXCEPTIONAL_CONDITION는 위험합니다
+    </description>
+    <priority>1</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+
+
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>

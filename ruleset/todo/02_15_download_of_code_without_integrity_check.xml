@@ -1,0 +1,20 @@
+<rule name="DOWNLOAD_OF_CODE_WITHOUT_INTEGRITY_CHECK"
+      language="java"
+      message="DOWNLOAD_OF_CODE_WITHOUT_INTEGRITY_CHECK는 위험합니다"
+      class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <description>
+        DOWNLOAD_OF_CODE_WITHOUT_INTEGRITY_CHECK는 위험합니다
+    </description>
+    <priority>1</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+
+
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>

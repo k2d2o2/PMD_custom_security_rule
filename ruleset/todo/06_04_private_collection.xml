@@ -1,0 +1,20 @@
+<rule name="PRIVATE_COLLECTION"
+      language="java"
+      message="PRIVATE_COLLECTION는 위험합니다"
+      class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <description>
+        PRIVATE_COLLECTION는 위험합니다
+    </description>
+    <priority>1</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+
+
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>

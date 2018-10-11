@@ -1,0 +1,20 @@
+<rule name="INCORRECT_PERMISSION_ASSIGNMENT_FOR_CRITICAL_RESOURCE"
+      language="java"
+      message="INCORRECT_PERMISSION_ASSIGNMENT_FOR_CRITICAL_RESOURCE는 위험합니다"
+      class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <description>
+        INCORRECT_PERMISSION_ASSIGNMENT_FOR_CRITICAL_RESOURCE는 위험합니다
+    </description>
+    <priority>1</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+
+
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>
