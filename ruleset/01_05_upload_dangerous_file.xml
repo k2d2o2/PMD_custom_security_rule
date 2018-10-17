@@ -1,0 +1,25 @@
+<rule name="UPLOAD_DANGEROUS_FILE"
+      language="java"
+      message="UPLOAD_DANGEROUS_FILE의 위험이 있습니다."
+      class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <description>
+        UPLOAD_DANGEROUS_FILE의 위험이 있습니다.
+    </description>
+    <priority>1</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+<![CDATA[
+
+//Name[
+  contains(@Image, "write")
+  and
+  ancestor::BlockStatement/preceding-sibling::BlockStatement//ClassOrInterfaceType[(@Image = "ServletFileUpload")]
+]
+
+]]>
+            </value>
+        </property>
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>
