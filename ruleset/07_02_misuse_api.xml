@@ -14,7 +14,7 @@ vulnerable API such as banned function or possibly misused API causes security b
 //BlockStatement/Statement/StatementExpression/PrimaryExpression[
 	PrimaryPrefix/Name[contains(@Image, "System.exit")]
 	and
-	PrimarySuffix/Arguments/ArgumentList/Expression/PrimaryExpression/PrimaryPrefix/Literal[number(@Image) eq 1]
+	PrimarySuffix/Arguments/ArgumentList/Expression/PrimaryExpression/PrimaryPrefix/Literal[@Image = 1]
 ]
 ]]>
             </value>
