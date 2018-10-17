@@ -11,6 +11,11 @@
             <value>
 <![CDATA[
 
+//LocalVariableDeclaration[
+  Type//ClassOrInterfaceType[contains(@Image, "XQ")]
+  and
+  VariableDeclarator//Name[contains(@Image,"executeQuery")]
+]
 
 ]]>
             </value>
