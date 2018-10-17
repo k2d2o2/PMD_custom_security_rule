@@ -11,6 +11,11 @@
             <value>
 <![CDATA[
 
+//Name[
+  contains(@Image, "newInstance")
+  and
+  ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[@Image="Class.forName"]
+]
 
 ]]>
             </value>
