@@ -11,6 +11,11 @@
             <value>
 <![CDATA[
 
+//PrimarySuffix[
+  @Image="equals"
+  and
+  ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[contains(@Image, "getCookies")]
+]
 
 ]]>
             </value>
