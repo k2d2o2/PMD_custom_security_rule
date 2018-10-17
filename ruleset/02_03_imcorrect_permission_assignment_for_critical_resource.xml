@@ -11,6 +11,13 @@
             <value>
 <![CDATA[
 
+//PrimaryExpression[
+  PrimarySuffix[@Image="exec"]
+  and
+  PrimarySuffix//Literal[contains(@Image, "umask")]
+  and
+  PrimarySuffix//Literal[contains(@Image, "0")]
+]
 
 ]]>
             </value>
