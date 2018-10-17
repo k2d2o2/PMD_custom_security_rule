@@ -11,6 +11,11 @@
             <value>
 <![CDATA[
 
+//MethodDeclaration[
+  Block//Name[contains(@Image, "login")]
+  and
+  count(Block//ForStatement) = 0
+]
 
 ]]>
             </value>
