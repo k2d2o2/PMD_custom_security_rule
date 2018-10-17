@@ -11,6 +11,11 @@
             <value>
 <![CDATA[
 
+//ArgumentList[
+  Expression//Name[contains(@Image, "AUTH")]
+  and
+  Expression//Literal[contains(@Image, "none")]
+]
 
 ]]>
             </value>
