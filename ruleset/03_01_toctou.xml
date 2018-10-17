@@ -11,6 +11,11 @@
             <value>
 <![CDATA[
 
+//IfStatement[
+  Expression//Name[contains(@Image, "exists")]
+  and
+  Statement//Name[contains(@Image, "read") or contains(@Image, "delete")]
+]
 
 ]]>
             </value>
