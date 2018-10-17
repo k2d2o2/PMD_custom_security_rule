@@ -10,7 +10,11 @@
         <property name="xpath">
             <value>
 <![CDATA[
-
+//Literal[
+  contains(@Image, "<form")
+  and
+  not (contains(@Image, "post") or contains(@Image, "Post") or contains(@Image, "POST"))
+]
 
 ]]>
             </value>
