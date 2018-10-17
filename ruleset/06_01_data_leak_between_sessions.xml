@@ -11,6 +11,17 @@
             <value>
 <![CDATA[
 
+//StatementExpression[
+  AssignmentOperator
+  and
+  PrimaryExpression//Name[@Image =
+    (
+      ancestor::ClassOrInterfaceBodyDeclaration/preceding-sibling::ClassOrInterfaceBodyDeclaration//VariableDeclaratorId/@Image
+    )
+    and
+    ancestor::ClassOrInterfaceDeclaration/ExtendsList/ClassOrInterfaceType[contains(@Image, "HttpServlet")]
+  ]
+]
 
 ]]>
             </value>
