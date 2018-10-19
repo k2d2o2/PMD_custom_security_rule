@@ -11,6 +11,15 @@
             <value>
 <![CDATA[
 
+//StatementExpression[
+  count(PrimaryExpression/PrimarySuffix) = 1
+  and
+  AssignmentOperator
+  and
+  Expression/PrimaryExpression/PrimaryPrefix/Name[
+    @Image = ancestor::MethodDeclaration//FormalParameters//VariableDeclaratorId/@Image
+  ]
+]
 
 ]]>
             </value>
