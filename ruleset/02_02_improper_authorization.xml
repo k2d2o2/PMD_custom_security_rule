@@ -11,6 +11,8 @@
             <value>
 <![CDATA[
 
+(: 메소드의 argument 중에 AUTH를 포함하면서 "none"인 경우 :)
+(: If the method arguments whose attribute name contains AUTH and sets the attribute to "none" :)
 //ArgumentList[
   Expression//Name[contains(@Image, "AUTH")]
   and

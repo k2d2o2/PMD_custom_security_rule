@@ -12,6 +12,8 @@
 <![CDATA[
 
 //MethodDeclaration[
+  (: Detect the existence of login method without ForStatement :)
+  (: login 메소드를 사용하면서 for문을 사용하지 않는 경우 탐지 :)
   Block//Name[contains(@Image, "login")]
   and
   count(Block//ForStatement) = 0

@@ -12,6 +12,8 @@
 <![CDATA[
 
 //StatementExpression[
+  (: Detect local variable assignment using HttpServlet Class :)
+  (: HttpServlet 클래스를 통한 지역 변수 할당 탐지  :)
   AssignmentOperator
   and
   PrimaryExpression//Name[@Image =

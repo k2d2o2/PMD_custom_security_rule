@@ -12,8 +12,12 @@ Since attacker could manupulate DNS entry, security decision depends on domain n
             <value>
 <![CDATA[
 //Expression/PrimaryExpression[
+    (: Detect a usage of getCanonicalHostName() method :)
+    (: getCanonicalHostName() 메소드 사용 탐지 :)
 	PrimaryPrefix/Name[contains(@Image, "getCanonicalHostName")]
 	and
+	(: Detect an argument for getCanonicalHostName() does not in IP format(ex. 192.168.0.1) :)
+	(: getCanonicalHostName()의 인자가 IP 형식(ex. 192.168.0.1)이 아닌 경우 탐지 :)
 	PrimarySuffix/Arguments/ArgumentList/Expression/PrimaryExpression/PrimaryPrefix/Literal[not(matches(@Image, "[0-9]+[.][0-9]+[.][0-9]+[.][0-9]+"))]
 ]
 ]]>

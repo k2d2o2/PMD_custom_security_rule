@@ -11,10 +11,14 @@
             <value>
 <![CDATA[
 //PrimaryExpression[
+  (: Detect a usage of method whose name contains sendRedirect :)
+  (: 메소드 이름에 sendRedirect가 포함된 경우 :)
   (PrimaryPrefix//Name[contains(@Image, "sendRedirect")])
   and
   PrimarySuffix//Name
   and
+  (: If the readLine or getParameter is used before the corresponding node in the block containing the node satisfying the above condition :)
+  (: 위의 조건을 만족하는 노드가 포함된 블록 내에서 해당 노드 이전에 readLine이나 getParameter가 사용된 경우 :)
   (count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "readLine"))])>0
   or
   count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "getParameter"))])>0

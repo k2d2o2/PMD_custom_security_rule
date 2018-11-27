@@ -11,6 +11,8 @@
             <value>
 <![CDATA[
 //Literal[
+  (: Detect the node which contains "<form" as a string and does not contains post,Post,POST :)
+  (: 문자열에 "<form"을 포함하고 post,Post,POST를 포함하지 않는 경우 :)
   contains(@Image, "<form")
   and
   not (contains(@Image, "post") or contains(@Image, "Post") or contains(@Image, "POST"))

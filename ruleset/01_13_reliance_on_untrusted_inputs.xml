@@ -12,6 +12,8 @@
 <![CDATA[
 
 //PrimarySuffix[
+  (: Comparison the value originated from getCookies method using equals method :)
+  (: getCookies로 가져온 값을 equals로 비교하는 경우 :)
   @Image="equals"
   and
   ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[contains(@Image, "getCookies")]

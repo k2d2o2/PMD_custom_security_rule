@@ -12,6 +12,8 @@
 <![CDATA[
 
 //IfStatement[
+  (: Detect the usage of exist() method before read or delete method :)
+  (: read 또는 delete 메소드를 이전에 exist 메소드 사용 탐지 :)
   Expression//Name[contains(@Image, "exists")]
   and
   Statement//Name[contains(@Image, "read") or contains(@Image, "delete")]

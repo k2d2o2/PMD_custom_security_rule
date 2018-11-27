@@ -12,6 +12,8 @@
 <![CDATA[
 
 //PrimaryExpression[
+  (: Detect the usage of setMaxAge method which uses MultiplicativeExpression for calculating MaxAge :)
+  (: MaxAge를 계산하기 위해 곱셈 연산을 사용하는 setMaxAge 메소드를 탐지 :)
   (PrimarySuffix[contains(@Image, "setMaxAge")
     and
     PrimarySuffix//MultiplicativeExpression

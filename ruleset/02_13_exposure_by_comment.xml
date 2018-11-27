@@ -10,7 +10,8 @@
         <property name="xpath">
             <value>
 <![CDATA[
-
+(: Detect password or username in comments(<"!--") :)
+(: 주석 안에 password 또는 username이 있는 경우를 탐지 :)
 //Literal[contains(@Image, "<!--") and (contains(@Image, password) or contains(@Image, username))]
 
 ]]>

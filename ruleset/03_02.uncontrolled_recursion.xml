@@ -10,7 +10,8 @@
         <property name="xpath">
             <value>
 <![CDATA[
-
+(: Detect recursive calling :)
+(: 재귀 호출 탐지 :)
 //Block/BlockStatement//PrimaryExpression/PrimaryPrefix/Name[
  @Image = ancestor::MethodDeclaration/MethodDeclarator/@Image
 ]

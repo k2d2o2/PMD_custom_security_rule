@@ -12,6 +12,8 @@
 <![CDATA[
 
 //PrimaryExpression[
+  (: Detect the usage of exec method which uses umask 0 as an argument :)
+  (: umask 0를 인자로 exec 메소드를 사용하는 경우 :)
   PrimarySuffix[@Image="exec"]
   and
   PrimarySuffix//Literal[contains(@Image, "umask")]

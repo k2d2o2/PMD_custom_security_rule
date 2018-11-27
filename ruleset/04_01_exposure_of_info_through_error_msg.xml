@@ -12,6 +12,8 @@
 <![CDATA[
 
 //PrimaryExpression[
+  (: Detect the usage of print, write method :)
+  (: print, write 메소드 사용 탐지 :)
   (PrimarySuffix[contains(@Image, "print")
     and
     following-sibling::PrimarySuffix//Name
@@ -34,6 +36,8 @@
   )
   and
   (
+  (: Check getSession method before using print, write method :)
+  (: print, write 메소드 사용 이전에 getSession 사용 여부 확인 :)
   count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "getSession"))])>0
   )
 ]

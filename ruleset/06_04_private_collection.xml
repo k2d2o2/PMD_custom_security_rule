@@ -10,7 +10,8 @@
         <property name="xpath">
             <value>
 <![CDATA[
-
+(: Detect that local variable is used as a return value :)
+(: 로컬 변수가 반환값으로 사용되는지 탐지 :)
 //ReturnStatement/Expression/PrimaryExpression[
   PrimarySuffix[
     @Image = ancestor::ClassOrInterfaceBody//FieldDeclaration/VariableDeclarator/VariableDeclaratorId/@Image

@@ -11,12 +11,16 @@
             <value>
 <![CDATA[
 //AllocationExpression/ClassOrInterfaceType[
+  (: Detect a usage of File-related Class :)
+  (: File 관련 클래스 사용 탐지 :)
   contains(@Image, "File")
   and
   (not (contains(@Image, "File_")))
   and
   //Name/@Image
-  and 
+  and
+  (: If a readLine or getParameter exists before the use of the File class in the code block in which the node that satisfies the above condition is executed. :)
+  (: 위의 조건을 만족하는 노드가 포함된 블록 내에서 File 클래스 이전에 readLine과 getParameter가 존재하는 경우 :)
   (count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "readLine"))])>0
   or
   count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "getParameter"))])>0  

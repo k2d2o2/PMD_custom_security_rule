@@ -11,6 +11,8 @@
             <value>
 <![CDATA[
 //PrimaryExpression[
+  (: Detect the usage of format method and arguments contains "%s" as a Literal :)
+  (: format 메소드를 사용하고 인자에 "%s"가 포함된 경우 :)
   (PrimarySuffix[contains(@Image, "format")
     and
     following-sibling::PrimarySuffix//Name
@@ -26,6 +28,8 @@
   )
   )
   and
+  (: If readLine or getParameter is exist before the corresponding node in the block containing the node satisfying the above condition :)
+  (: 위의 조건을 만족하는 노드가 포함된 블록 내에서 해당 노드 이전에 readLine, getParameter가 존재하는 경우 :)
   (count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "readLine"))])>0
   or
   count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "getParameter"))])>0

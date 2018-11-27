@@ -10,7 +10,8 @@
         <property name="xpath">
             <value>
 <![CDATA[
-
+(: Detect instantiating class which is loaded from Class.forName using newInstance :)
+(: Class.forName로 불러온 클래스를 newInstance로 인스턴스화 하는 경우 탐지 :)
 //Name[
   contains(@Image, "newInstance")
   and

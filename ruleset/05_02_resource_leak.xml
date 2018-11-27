@@ -12,6 +12,8 @@
 <![CDATA[
 
 //MethodDeclaration//Name[
+  (: Detect methods which name ends with Stream, Reader, Writer :)
+  (: 이름이 Stream, Reader, Writer로 끝나는 메소드 탐지 :)
   (
     ends-with(@Image, "Stream")
     or ends-with(@Image, "Reader")
@@ -19,6 +21,8 @@
   )
   and
   (
+    (: Detect the absence of close method :)
+    (: close 메소드를 사용하지 않는 경우 탐지 :)
     not(ancestor::MethodDeclaration//FinallyStatement//Name[contains(@Image,"close")])
   )
 ]

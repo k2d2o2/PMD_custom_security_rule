@@ -11,16 +11,21 @@
             <value>
 <![CDATA[
 //Expression[
+  (: Detect a usage of arithmetic operation :)
+  (: 산술 연산이 사용된 경우 탐지 :)
   (
     CastExpression//*[AdditiveExpression or MultiplicativeExpression ]
   )
   and
+  (: if the readLine, getParameter is used before the corresponding node in the block containing the node satisfying the aboce condition :)
   (
     count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "readLine"))])>0
     or
     count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "getParameter"))])>0
   )
   and
+  (: There is no arithmetic comparision using if statement :)
+  (: 조건문들 통해서 대수 비교를 하지 않는 경우 탐지 :)
   (
     not(ancestor::IfStatement//RelationalExpression["<" or ">" or "<=" or ">="])
   )

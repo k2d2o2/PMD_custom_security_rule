@@ -12,6 +12,8 @@
 <![CDATA[
 
 //AllocationExpression[
+  (: Detect the usage of SecretKetSpec class and its argument is "DES" :)
+  (: SecretKeySpec 클래스를 사용하고 인자가 "DES"인 경우 :)
   ClassOrInterfaceType[@Image = "SecretKeySpec"]
   and
   Arguments//Literal[contains(@Image, "DES")]

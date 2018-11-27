@@ -12,8 +12,12 @@
 <![CDATA[
 
 //Name[
+  (: Detect a usage of method whose name contains write :)
+  (: 메소드 이름에 write가 포함되는 경우 :)
   contains(@Image, "write")
   and
+  (: The node where the ServletFileUpload class is used within the block that contains the node that satisfies the above condition :)
+  (: 위의 조건을 만족하는 노드가 포함된 블록 내에서 ServletFileUpload 클래스가 사용된 경우 :)
   ancestor::BlockStatement/preceding-sibling::BlockStatement//ClassOrInterfaceType[(@Image = "ServletFileUpload")]
 ]
 

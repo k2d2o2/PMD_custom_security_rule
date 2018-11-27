@@ -12,8 +12,12 @@
 <![CDATA[
 
 //AllocationExpression/ClassOrInterfaceType[
+  (: Detect the usage of SecretKeySpec class :)
+  (: SecretKeySpec 클래스 사용 탐지 :)
   @Image ="SecretKeySpec"
   and
+  (: Check variable assignment which uses '"' before declaration of SecretKeySpec class :)
+  (: SecretKeySpec 클래스를 사용하기 전에 '"'를 이용한 변수 할당 확인 :)
   (count(ancestor::BlockStatement/preceding-sibling::BlockStatement//StatementExpression[
     PrimaryExpression[
       (PrimaryPrefix/Name/@Image)

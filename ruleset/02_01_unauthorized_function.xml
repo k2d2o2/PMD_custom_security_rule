@@ -12,6 +12,8 @@
 <![CDATA[
 
 //PrimaryExpression[
+  (: Detect the node whose method name contains print :)
+  (: 메소드 이름에 print가 포함되는 경우 :)
   (PrimarySuffix[contains(@Image, "print")
     and
     following-sibling::PrimarySuffix//Name
@@ -22,6 +24,8 @@
     PrimarySuffix//Name
   )
   or
+  (: Detect the node whose method name contains write :)
+  (: 메소드 이름에 write가 포함되는 경우 :)
   PrimarySuffix[contains(@Image, "write")
     and
     following-sibling::PrimarySuffix//Name
@@ -34,6 +38,8 @@
   )
   and
   (
+  (: 위의 메소드들이 사용된 블록 내에서 getParameter(id)가 사용된 경우 :)
+  (: Detect the usage of getParameter(id) in the block using the above methods :)
   count(ancestor::BlockStatement/preceding-sibling::BlockStatement//PrimaryExpression[
    PrimaryPrefix/Name[(contains(@Image, "getParameter"))]
    and

@@ -12,10 +12,16 @@
 <![CDATA[
 
 //StatementExpression[
+  (: Check this variable is an entry of array :)
+  (: 변수가 배열의 시작점인지 확인 :)
   count(PrimaryExpression/PrimarySuffix) = 1
   and
+  (: Detect the usage of assignment operator :)
+  (: 할당 연산자 사용 :)
   AssignmentOperator
   and
+  (: Check the equality of variable name and parameter name :)
+  (: 변수 이름과 Parameter 이름이 동일한지 확인 :)
   Expression/PrimaryExpression/PrimaryPrefix/Name[
     @Image = ancestor::MethodDeclaration//FormalParameters//VariableDeclaratorId/@Image
   ]

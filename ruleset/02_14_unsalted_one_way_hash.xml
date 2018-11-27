@@ -10,7 +10,8 @@
         <property name="xpath">
             <value>
 <![CDATA[
-
+(: Detect the usage of MessageDigest.getInstance method:)
+(: MessageDigest.getInstance 메소드 사용 탐지 :)
 //PrimaryExpression[
   (PrimarySuffix[contains(@Image, "MessageDigest.getInstance")
     and
@@ -23,6 +24,8 @@
   )
   )
   and
+  (: Check the existence of digest method and the absence of update method after using getInstance method :)
+  (: getInstance 메소드 사용 이후 digest 메소드를 사용하고 update는 사용하지 않는 경우 검사 :)
   (count(ancestor::BlockStatement/following-sibling::BlockStatement//Name[(contains(@Image, "digest"))])>0)
   and
   (not(count(ancestor::BlockStatement/following-sibling::BlockStatement//Name[(contains(@Image, ".update"))])>0))

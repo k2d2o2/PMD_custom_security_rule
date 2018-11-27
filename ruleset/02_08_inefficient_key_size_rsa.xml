@@ -14,12 +14,16 @@ Detect if the size of the key used for encryption is short. If the length of the
 //BlockStatement[
 	Statement/StatementExpression/PrimaryExpression[
 		(
+		   (: Detect an argument for initialize is less than 1024 :)
+		   (: initialize의 인자가 1024 미만인 경우 :)
 			PrimaryPrefix/Name[ends-with(@Image, "initialize")]
 			and
 			PrimarySuffix/Arguments/ArgumentList/Expression/PrimaryExpression/PrimaryPrefix/Literal[@Image < 1024]
 		)
 	]
 	and
+	(: Detect the usage of KeyPairGenerator class in the block containing initialize :)
+	(: initialize가 사용된 블록 내에서 KeyPairGenerator가 사용된 경우 :)
 	ancestor::Block/BlockStatement[
 		LocalVariableDeclaration[Type/ReferenceType/ClassOrInterfaceType[contains(@Image, "KeyPairGenerator")]]
 	]

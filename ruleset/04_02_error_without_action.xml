@@ -12,8 +12,12 @@
 <![CDATA[
 
 //IfStatement[
+  (: Check the usage of mkdirs method :)
+  (: mkdir 메소드 사용 검사 :)
   Expression//Name[contains(@Image, "mkdirs")]
   and
+  (: Check the absence of error handling after calling mkdirs method :)
+  (: mkdir 메소드 호출 뒤 오류 처리의 부재 확인 :)
   not(Statement//Block/*)
 ]
 

@@ -11,6 +11,8 @@
             <value>
 <![CDATA[
 //PrimaryExpression[
+  (: Detect a usage of addCookie, addHeader, setHeader method :)
+  (: addCookie, addHeader, setHeader 메소드 사용 탐지 :)
   (PrimarySuffix[contains(@Image, "addCookie")
     and
     following-sibling::PrimarySuffix//Name
@@ -42,6 +44,8 @@
   )
   )
   and
+  (: If the readLine, getParameter is used before the corresponding node in the block containing the node satisfying the above condition :)
+  (: 위의 조건을 만족하는 노드가 포함된 블록 내에서 해당 노드 이전에 readLine 또는 getParameter가 존재하는 경우 :)
   (count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "readLine"))])>0
   or
   count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "getParameter"))])>0

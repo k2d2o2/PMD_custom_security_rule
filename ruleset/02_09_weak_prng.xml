@@ -13,11 +13,15 @@
 
 //PrimaryExpression[
   (
+    (: Detect the usage of Math.random :)
+    (: Math.random을 사용하는 경우 :)
     PrimarySuffix[contains(@Image, "Math.random")]
     or (
       PrimaryPrefix[
         (Name[contains(@Image, "Math.random")])
         or
+        (: Detect the usage of Random class and nextint method in the same block :)
+        (: Random 클래스를 사용하고 같은 블록에서 nextint 메소드를 사용하는 경우 :)
         (AllocationExpression/ClassOrInterfaceType[
           @Image ="Random"
           and

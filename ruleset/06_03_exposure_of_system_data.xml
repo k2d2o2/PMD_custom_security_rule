@@ -13,6 +13,8 @@
 
 //PrimaryExpression[
   (
+    (: Detect that System.getenv is printed :)
+    (: System.getenv가 출력되는지 검색 :)
     PrimarySuffix[contains(@Image, "print")
       and
       following-sibling::PrimarySuffix//Name[contains(@Image, "System.getenv")]

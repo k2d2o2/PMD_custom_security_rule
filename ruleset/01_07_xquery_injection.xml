@@ -12,6 +12,8 @@
 <![CDATA[
 
 //LocalVariableDeclaration[
+  (: Detect the node which uses XQ Class and a method whose name contains executeQuery :)
+  (: XQ 클래스를 사용하고 메소드 이름이 executeQuery를 포함하는 경우 :)
   Type//ClassOrInterfaceType[contains(@Image, "XQ")]
   and
   VariableDeclarator//Name[contains(@Image,"executeQuery")]

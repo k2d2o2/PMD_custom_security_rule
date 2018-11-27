@@ -11,6 +11,8 @@
             <value>
 <![CDATA[
 //PrimaryExpression[
+  (: Detect a method whose name contains "print" and variable is used as an argument :)
+  (: 메소드 이름에 print를 포함하고 argument로 변수를 사용하는 경우 :)
   (PrimarySuffix[contains(@Image, "print")
     and
     following-sibling::PrimarySuffix//Name
@@ -32,6 +34,8 @@
   )
   )
   and
+  (: If the readLine or getParameter is used before the corresponding node in the block containing the node satisfying the above condition :)
+  (: 위의 조건을 만족하는 노드가 포함된 블록 내에서, 해당 노드가 사용되기 이전에 readLine이나 getParameter가 존재하는 경우 :)
   (count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "readLine"))])>0
   or
   count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "getParameter"))])>0

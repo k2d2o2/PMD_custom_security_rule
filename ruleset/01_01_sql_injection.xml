@@ -13,10 +13,14 @@
 <![CDATA[
 
 //PrimaryExpression[
+  (: Detect a usage of execute() method :)
+  (: execute() 메소드 사용 탐지 :)
   PrimaryPrefix/Name[contains(@Image, 'execute')]
   and
   PrimarySuffix//Name
   and
+  (: If a readLine or getParameter exists before the execute in the code block in which the node satisfying the above condition :)
+  (: 위의 조건을 만족하는 노드가 포함된 코드 블록에서 execute 함수 이전에 readLine 또는 getParameter가 사용된 경우 :)
   (count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "readLine"))])>0
   or
   count(ancestor::BlockStatement/preceding-sibling::BlockStatement//Name[(contains(@Image, "getParameter"))])>0
