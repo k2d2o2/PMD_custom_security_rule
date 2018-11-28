@@ -8,6 +8,7 @@ Since attacker could manupulate DNS entry, security decision depends on domain n
     </description>
     <priority>3</priority>
     <properties>
+        <property name="version" value="2.0" />
         <property name="xpath">
             <value>
 <![CDATA[
