@@ -13,11 +13,11 @@ vulnerable API such as banned function or possibly misused API causes security b
             <value>
 <![CDATA[
 //BlockStatement/Statement/StatementExpression/PrimaryExpression[
-    (: Detect a usage of System.exit(1) method :)
-    (: System.exit(1) 메소드 사용 탐지 :)
+	(: Detect a usage of System.exit(1) method :)
+	(: System.exit(1) 메소드 사용 탐지 :)
 	PrimaryPrefix/Name[contains(@Image, "System.exit")]
 	and
-	PrimarySuffix/Arguments/ArgumentList/Expression/PrimaryExpression/PrimaryPrefix/Literal[@Image = 1]
+	PrimarySuffix/Arguments/ArgumentList/Expression/PrimaryExpression/PrimaryPrefix/Literal[contains(@Image, "1")]
 ]
 ]]>
             </value>
