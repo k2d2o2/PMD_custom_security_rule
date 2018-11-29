@@ -8,7 +8,7 @@
     </description>
     <priority>1</priority>
     <properties>
-        <property name="version" value="2.0" />
+        <property name="version" value="1.0 compatibility" />
         <property name="xpath">
             <value>
 <![CDATA[
