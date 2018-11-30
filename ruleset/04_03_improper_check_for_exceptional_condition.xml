@@ -7,13 +7,13 @@
     </description>
     <priority>1</priority>
     <properties>
-        <property name="version" value="1.0 compatibility" />
+        <property name="version" value="1.0 compatibility"/>
         <property name="xpath">
             <value>
 <![CDATA[
-(: Detect the usage of Excpetion :)
+(: Detect the usage of Exception :)
 (: Exception 사용 탐지 :)
-//CatchStatement//ClassOrInterfaceType[@Image="Exception"]
+//CatchStatement//ClassOrInterfaceType[@Image="NullPointerException" or @Image="Exception"]
 
 ]]>
             </value>

@@ -11,10 +11,9 @@
         <property name="xpath">
             <value>
 <![CDATA[
-(: Detect the usage of main method :)
-(: main 메소드 사용 탐지 :)
-//MethodDeclarator[@Image="main"]
-
+(: Detect the conditon in if statement is debug :)
+(: 조건문 안에 조건이 debug인 경우 탐지:)
+//IfStatement/Expression//Name[contains(translate(@Image, "DEBUG", "debug"), debug)]
 ]]>
             </value>
         </property>
