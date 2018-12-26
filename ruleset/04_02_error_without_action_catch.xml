@@ -1,4 +1,4 @@
-<rule name="ERROR_WITHOUT_ACTION"
+<rule name="ErrorWithoutAction"
       language="java"
       message="ERROR_WITHOUT_ACTION는 위험합니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">
