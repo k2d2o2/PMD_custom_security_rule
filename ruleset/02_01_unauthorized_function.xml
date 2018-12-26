@@ -1,4 +1,4 @@
-<rule name="UNAUTHORIZED_FUNCTION"
+<rule name="UnauthorizedFunction"
       language="java"
       message="UNAUTHORIZED_FUNCTION은 위험합니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">

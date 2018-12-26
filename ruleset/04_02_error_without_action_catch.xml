@@ -1,9 +1,9 @@
-<rule name="ErrorWithoutAction"
+<rule name="ErrorWithoutActionCatch"
       language="java"
-      message="ERROR_WITHOUT_ACTION는 위험합니다."
+      message="ErrorWithoutActionCatch는 위험합니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">
     <description>
-        ERROR_WITHOUT_ACTION는 위험합니다.
+        ErrorWithoutActionCatch는 위험합니다.
     </description>
     <priority>1</priority>
     <properties>
@@ -11,17 +11,8 @@
         <property name="xpath">
             <value>
 <![CDATA[
-
-//IfStatement[
-  (: Check the usage of mkdirs method :)
-  (: mkdir 메소드 사용 검사 :)
-  Expression//Name[contains(@Image, "mkdirs")]
-  and
-  (: Check the absence of error handling after calling mkdirs method :)
-  (: mkdir 메소드 호출 뒤 오류 처리의 부재 확인 :)
-  not(Statement//Block/*)
-]
-
+//CatchStatement
+ [count(Block/BlockStatement) = 0]
 ]]>
             </value>
         </property>

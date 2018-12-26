@@ -1,4 +1,4 @@
-<rule name="CLEAR_TEXT_TRANSMISSION_OF_SENSITIVE_INFORMATION"
+<rule name="ClearTextTransmissionOfSensitiveInformation"
       language="java"
       message="CLEAR_TEXT_TRANSMISSION_OF_SENSITIVE_INFORMATION은 위험합니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">

@@ -1,4 +1,4 @@
-<rule name="PATH_TRAVERSAL"
+<rule name="PathTraversal"
       language="java"
       message="경로조작 위험이 있습니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">

@@ -1,4 +1,4 @@
-<rule name="RESOURCE_LEAK"
+<rule name="ResourceLeak"
       language="java"
       message="RESOURCE_LEAK의 위험이 있습니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">

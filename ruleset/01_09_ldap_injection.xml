@@ -1,4 +1,4 @@
-<rule name="LDAP_INJECTION"
+<rule name="LDAPInjection"
       language="java"
       message="LDAP_INJECTION의 위험이 있습니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">

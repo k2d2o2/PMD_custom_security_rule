@@ -1,4 +1,4 @@
-<rule name="UPLOAD_DANGEROUS_FILE"
+<rule name="UploadDangerousFile"
       language="java"
       message="UPLOAD_DANGEROUS_FILE의 위험이 있습니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">

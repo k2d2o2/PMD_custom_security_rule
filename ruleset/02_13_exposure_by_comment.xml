@@ -1,4 +1,4 @@
-<rule name="EXPOSURE_BY_COMMENT"
+<rule name="ExposureByComment"
       language="java"
       message="EXPOSURE_BY_COMMENT는 위험합니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">

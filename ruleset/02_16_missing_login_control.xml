@@ -1,4 +1,4 @@
-<rule name="MISSING_LOGIN_CONTROL"
+<rule name="MissingLoginControl"
       language="java"
       message="MISSING_LOGIN_CONTROL는 위험합니다"
       class="net.sourceforge.pmd.lang.rule.XPathRule">

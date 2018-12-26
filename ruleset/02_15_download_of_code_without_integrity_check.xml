@@ -1,4 +1,4 @@
-<rule name="DOWNLOAD_OF_CODE_WITHOUT_INTEGRITY_CHECK"
+<rule name="DownloadOfCodeWithoutIntegrityCheck"
       language="java"
       message="DOWNLOAD_OF_CODE_WITHOUT_INTEGRITY_CHECK는 위험합니다"
       class="net.sourceforge.pmd.lang.rule.XPathRule">

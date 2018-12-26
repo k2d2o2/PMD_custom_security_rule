@@ -1,4 +1,4 @@
-<rule name="PUBLIC_DATA_ASSIGNED_TO_PRIVATE_ARRAY"
+<rule name="PublicDataAssignedToPrivateArray"
       language="java"
       message="PUBLIC_DATA_ASSIGNED_TO_PRIVATE_ARRAY는 위험합니다"
       class="net.sourceforge.pmd.lang.rule.XPathRule">

@@ -1,4 +1,4 @@
-<rule name="COMMAND_INJECTION"
+<rule name="CommandInjection"
       language="java"
       message="COMMAND_INJECTION의 위험이 있습니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">

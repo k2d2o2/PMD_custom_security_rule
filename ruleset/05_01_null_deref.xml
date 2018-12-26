@@ -1,4 +1,4 @@
-<rule name="NULL_DEREFERENCE"
+<rule name="NullDereference"
       language="java"
       message="NULL_DEREFERENCE의 위험이 있습니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">

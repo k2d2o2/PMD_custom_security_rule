@@ -1,4 +1,4 @@
-    <rule name="SQL_INJECTION"
+    <rule name="SQLInjection"
       language="java"
       message="SQL_INJECTION의 위험이 있습니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">

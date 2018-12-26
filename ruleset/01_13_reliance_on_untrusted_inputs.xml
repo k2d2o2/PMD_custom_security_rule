@@ -1,4 +1,4 @@
-<rule name="RELIANCE_ON_UNTRUSTED_INPUTS_IN_A_SECURITY_DECISION"
+<rule name="RelianceOnUntrustedInputsInASecurityDecision"
       language="java"
       message="RELIANCE_ON_UNTRUSTED_INPUTS_IN_A_SECURITY_DECISION은 위험합니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">

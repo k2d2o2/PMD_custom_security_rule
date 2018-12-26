@@ -1,4 +1,4 @@
-<rule name="EXPOSURE_OF_SYSTEM_DATA"
+<rule name="ExposureOfSystemData"
       language="java"
       message="EXPOSURE_OF_SYSTEM_DATA는 위험합니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">

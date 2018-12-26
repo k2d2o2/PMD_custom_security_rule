@@ -1,4 +1,4 @@
-<rule name="WEAK_PRNG"
+<rule name="WeakPRNG"
       language="java"
       message="WEAK_PRNG는 위험합니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">

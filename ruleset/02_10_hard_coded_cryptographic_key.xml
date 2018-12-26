@@ -1,4 +1,4 @@
-<rule name="HARD_CODED_CRYPTOGRAPHIC_KEY"
+<rule name="HardcodedCryptographicKey"
       language="java"
       message="HARD_CODED_CRYPTOGRAPHIC_KEY는 위험합니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">

@@ -1,4 +1,4 @@
-<rule name="XPATH_INJECTION"
+<rule name="XPathInjection"
       language="java"
       message="XPATH_INJECTION의 위험이 있습니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">

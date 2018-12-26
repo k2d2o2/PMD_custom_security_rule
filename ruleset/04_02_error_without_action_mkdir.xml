@@ -1,9 +1,9 @@
-<rule name="ErrorWithoutAction"
+<rule name="ErrorWithoutActionMkdir"
       language="java"
-      message="ERROR_WITHOUT_ACTION는 위험합니다."
+      message="ErrorWithoutActionMkdir는 위험합니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">
     <description>
-        ERROR_WITHOUT_ACTION는 위험합니다.
+        ErrorWithoutActionMkdir는 위험합니다.
     </description>
     <priority>1</priority>
     <properties>

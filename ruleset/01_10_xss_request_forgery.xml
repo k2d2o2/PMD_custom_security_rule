@@ -1,4 +1,4 @@
-<rule name="XSS_REQUEST_FORGERY"
+<rule name="XssRequestForgery"
       language="java"
       message="XSS_REQUEST_FORGERY의 위험이 있습니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">

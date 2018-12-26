@@ -1,4 +1,4 @@
-<rule name="UNSALTED_ONE_WAY_HASH"
+<rule name="UnsaltedOneWayHash"
       language="java"
       message="UNSALTED_ONE_WAY_HASH는 위험합니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">

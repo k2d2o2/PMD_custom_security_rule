@@ -1,4 +1,4 @@
-<rule name="WEAK_CRYPTOGRAPHIC_ALGORITHM"
+<rule name="WeakCryptographicAlgorithm"
       language="java"
       message="WEAK_CRYPTOGRAPHIC_ALGORITHM은 위험합니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">

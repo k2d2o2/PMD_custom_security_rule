@@ -1,4 +1,4 @@
-<rule name="IMPROPER_CHECK_FOR_EXCEPTIONAL_CONDITION"
+<rule name="ImproperCheckForExceptionalCondition"
       language="java"
       message="IMPROPER_CHECK_FOR_EXCEPTIONAL_CONDITION는 위험합니다"
       class="net.sourceforge.pmd.lang.rule.XPathRule">

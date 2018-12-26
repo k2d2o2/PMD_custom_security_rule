@@ -1,4 +1,4 @@
-<rule name="IMPROPER_AUTHORIZATION"
+<rule name="ImproperAuthorization"
       language="java"
       message="IMPROPER_AUTHORIZATION는 위험합니다"
       class="net.sourceforge.pmd.lang.rule.XPathRule">

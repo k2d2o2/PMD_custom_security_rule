@@ -1,4 +1,4 @@
-<rule name="OPEN_REDIRECT"
+<rule name="OpenRedirect"
       language="java"
       message="OPEN_REDIRECT의 위험이 있습니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">

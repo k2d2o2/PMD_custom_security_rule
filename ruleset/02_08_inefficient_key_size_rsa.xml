@@ -1,4 +1,4 @@
-<rule name="INEFFICIENT_KEY_SIZE(RSA)"
+<rule name="InefficientKeySize(RSA)"
       language="java"
       message="Detect if the size of the key used for encryption is short."
       class="net.sourceforge.pmd.lang.rule.XPathRule"

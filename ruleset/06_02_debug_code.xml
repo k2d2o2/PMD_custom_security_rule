@@ -1,4 +1,4 @@
-<rule name="UNCLEANED_DEBUG_CODE"
+<rule name="UncleanedDebugCode"
       language="java"
       message="UNCLEANED_DEBUG_CODE는 위험합니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">
@@ -13,7 +13,9 @@
 <![CDATA[
 (: Detect the conditon in if statement is debug :)
 (: 조건문 안에 조건이 debug인 경우 탐지:)
-//IfStatement/Expression//Name[contains(translate(@Image, "DEBUG", "debug"), debug)]
+//IfStatement/Expression//Name[
+contains(lower-case(@Image), "debug")
+]
 ]]>
             </value>
         </property>

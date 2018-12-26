@@ -1,4 +1,4 @@
-<rule name="FORMAT_STRING"
+<rule name="FormatString"
       language="java"
       message="FORMAT_STRING의 위험이 있습니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">

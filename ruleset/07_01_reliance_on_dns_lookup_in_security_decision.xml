@@ -1,4 +1,4 @@
-<rule name="RELIANCE_ON_DNS_LOOKUP_IN_SECURITY_DECISION"
+<rule name="RelianceOnDNSLookupInSecurityDecision"
       language="java"
       message="Reliance on DNS Lookup for security decision is dangerous."
       class="net.sourceforge.pmd.lang.rule.XPathRule"

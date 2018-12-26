@@ -1,4 +1,4 @@
-<rule name="EXPOSURE_OF_INFO_THROUGH_ERROR"
+<rule name="ExposureOfInfoThroughError"
       language="java"
       message="EXPOSURE_OF_INFO_THROUGH_ERROR는 위험합니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">

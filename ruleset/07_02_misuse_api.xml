@@ -1,4 +1,4 @@
-<rule name="MISUSE_API"
+<rule name="MisuseAPI"
       language="java"
       message="vulnerable API such as banned function or possibly misused API causes security breach"
       class="net.sourceforge.pmd.lang.rule.XPathRule"

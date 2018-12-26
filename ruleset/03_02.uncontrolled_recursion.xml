@@ -1,4 +1,4 @@
-<rule name="UNCONTROLLED_RECURSION"
+<rule name="UncontrolledRecursion"
       language="java"
       message="UNCONTROLLED_RECURSION는 위험합니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">

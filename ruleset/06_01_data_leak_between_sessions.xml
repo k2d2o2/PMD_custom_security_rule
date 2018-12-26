@@ -1,4 +1,4 @@
-<rule name="DATA_LEAK_BETWEEN_SESSIONS"
+<rule name="DataLeakBetweenSession"
       language="java"
       message="DATA_LEAK_BETWEEN_SESSIONS의 위험이 있습니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">

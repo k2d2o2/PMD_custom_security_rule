@@ -1,4 +1,4 @@
-<rule name="PERSISTENT_COOKIE"
+<rule name="PersistentCookie"
       language="java"
       message="PERSISTENT_COOKIE는 위험합니다."
       class="net.sourceforge.pmd.lang.rule.XPathRule">

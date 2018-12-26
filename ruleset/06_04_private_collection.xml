@@ -1,4 +1,4 @@
-<rule name="PRIVATE_COLLECTION"
+<rule name="PrivateCollection"
       language="java"
       message="PRIVATE_COLLECTION는 위험합니다"
       class="net.sourceforge.pmd.lang.rule.XPathRule">

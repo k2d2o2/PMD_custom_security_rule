@@ -1,4 +1,4 @@
-<rule name="INCORRECT_PERMISSION_ASSIGNMENT_FOR_CRITICAL_RESOURCE"
+<rule name="IncorrectPermissionAssignmentForCriticalResource"
       language="java"
       message="INCORRECT_PERMISSION_ASSIGNMENT_FOR_CRITICAL_RESOURCE는 위험합니다"
       class="net.sourceforge.pmd.lang.rule.XPathRule">
