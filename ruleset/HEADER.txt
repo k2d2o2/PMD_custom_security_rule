@@ -5,12 +5,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
     <description>KISA Security Rule</description>
-    <rule ref="rulesets/java/sunsecure.xml/ArrayIsStoredDirectly"/>
-    <rule ref="rulesets/java/strictexception.xml/AvoidCatchingGenericException"/>
-    <rule ref="rulesets/java/strictexception.xml/AvoidCatchingNPE"/>
-    <rule ref="rulesets/java/logging-java.xml/AvoidPrintStackTrace"/>
-    <rule ref="rulesets/java/basic.xml/BrokenNullCheck"/>
-    <rule ref="rulesets/java/design.xml/CloseResource"/>
-    <rule ref="rulesets/java/empty.xml/EmptyCatchBlock"/>
-    <rule ref="rulesets/java/sunsecure.xml/MethodReturnsInternalArray"/>
-    <rule ref="rulesets/java/basic.xml/MisplacedNullCheck"/>
+    <rule ref="category/java/bestpractices.xml/ArrayIsStoredDirectly"/>
+    <rule ref="category/java/design.xml/AvoidCatchingGenericException"/>
+    <rule ref="category/java/errorprone.xml/AvoidCatchingNPE"/>
+    <rule ref="category/java/bestpractices.xml/AvoidPrintStackTrace"/>
+    <rule ref="category/java/errorprone.xml/BrokenNullCheck"/>
+    <rule ref="category/java/errorprone.xml/CloseResource"/>
+    <rule ref="category/java/errorprone.xml/EmptyCatchBlock"/>
+    <rule ref="category/java/bestpractices.xml/MethodReturnsInternalArray"/>
+    <rule ref="category/java/errorprone.xml/MisplacedNullCheck"/>
